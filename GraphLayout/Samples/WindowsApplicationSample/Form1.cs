@@ -214,6 +214,8 @@ namespace WindowsApplicationSample {
             //int wm = 80;
 						//TODO FR Experimenting with nodes
 						Microsoft.Msagl.Drawing.Node rNode_Test_FR1 = graph.AddNode("Test_FR1");
+						Microsoft.Msagl.Drawing.Node rNode_Test_FR1b = new Microsoft.Msagl.Drawing.Node("Test_FR1b");
+						graph.AddNode(rNode_Test_FR1b);
 						Microsoft.Msagl.Drawing.Node rNode_Test_FR2 = graph.AddNode("Test_FR2");
 						Microsoft.Msagl.Drawing.Edge rEdge_FR1_2 = new Edge(rNode_Test_FR1, rNode_Test_FR2, ConnectionToGraph.Connected);
             graph.AddEdge("1", "2");
