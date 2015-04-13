@@ -93,6 +93,7 @@
     <None Include="App.config" />
     <None Include="fullstring.dgml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
