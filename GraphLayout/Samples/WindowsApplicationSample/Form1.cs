@@ -212,6 +212,7 @@ namespace WindowsApplicationSample {
 */
 
             //int wm = 80;
+						graph.AddNode("Test node FR");
             graph.AddEdge("1", "2");
             graph.AddEdge("1", "3");
             var e = graph.AddEdge("4", "5");
