@@ -238,7 +238,7 @@ namespace Microsoft.Msagl.Routing {
             }
 
             foreach (var rootShape in rootShapes) {
-                foreach(var sh in rootShape.Descendands)
+                foreach(var sh in rootShape.Descendants)
                     foreach (var port in sh.Ports) {
                         var enterableSet = portsToEnterableShapes[port];
                         enterableSet.InsertRange(sh.Ancestors.Where(s => s.BoundaryCurve != null));
@@ -318,7 +318,7 @@ namespace Microsoft.Msagl.Routing {
 
 
         void RouteOnVisGraph() {
-            ancestorSets = GetAncestorSetsMap(root.Descendands);
+            ancestorSets = GetAncestorSetsMap(root.Descendants);
             if (BundlingSettings == null) {
                 foreach (var edgeGroup in _edges.GroupBy(EdgePassport)) {
                     var passport = edgeGroup.Key;
@@ -383,7 +383,7 @@ namespace Microsoft.Msagl.Routing {
         void RouteMultiEdges(List<Edge[]> multiEdges, InteractiveEdgeRouter interactiveEdgeRouter, Set<Shape> parents) {
             var mer = new MultiEdgeRouter(multiEdges, interactiveEdgeRouter, parents.SelectMany(p => p.Children).Select(s => s.BoundaryCurve), 
                  new BundlingSettings { InkImportance = 0.00001, EdgeSeparation = MultiEdgesSeparation}, MakeTransparentShapesOfEdgeGeometryAndGetTheShapes);
-            //giving more importance to ink might produce wierd routings with huge detours, maybe 0 is the best value here
+            //giving more importance to ink might produce weird routings with huge detours, maybe 0 is the best value here
             mer.Run();
            
         }
@@ -661,7 +661,7 @@ namespace Microsoft.Msagl.Routing {
             
         void CalculatePortsToShapes() {
             portsToShapes = new Dictionary<Port, Shape>();
-            foreach (var shape in root.Descendands)
+            foreach (var shape in root.Descendants)
                 foreach (var port in shape.Ports)
                     portsToShapes[port] = shape;
             //assign all orphan ports to the root 
