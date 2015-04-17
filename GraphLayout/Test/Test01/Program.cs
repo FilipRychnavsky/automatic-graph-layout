@@ -89,6 +89,7 @@ namespace Test01 {
 #if DEBUG
             DisplayGeometryGraph.SetShowFunctions();
 #endif
+						Triangulation(true);//FR
             ArgsParser.ArgsParser argsParser = SetArgsParser(args);
 
             if (argsParser.OptionIsUsed(PolygonDistanceTestOption))
