@@ -76,7 +76,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphmapsWpfControl", "tool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGraphmaps", "Test\TestGraphmaps\TestGraphmaps.csproj", "{C662BBF3-97D2-4000-8304-B900F785D48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gantt_CSharp", "Gantt_CSharp\Gantt_CSharp.csproj", "{7882E567-EADB-4106-A7F8-5732C26FBB74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gantt_CSharp", "Samples\Gantt_CSharp\Gantt_CSharp.csproj", "{7882E567-EADB-4106-A7F8-5732C26FBB74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -56,7 +56,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\tools\GraphViewerGDI\GraphViewerGDI.csproj">
+    <ProjectReference Include="..\..\tools\GraphViewerGDI\GraphViewerGDI.csproj">
       <Project>{725cd2cb-cf37-414e-a5a6-f1d87d4d6ede}</Project>
       <Name>GraphViewerGDI</Name>
     </ProjectReference>
