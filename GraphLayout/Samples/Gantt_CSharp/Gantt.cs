@@ -48,7 +48,12 @@ namespace Gantt_CSharp
 			//Microsoft.Msagl.Drawing.Node rNode_Drawing = new Microsoft.Msagl.Drawing.Node()
 			Microsoft.Msagl.Drawing.Node rNode_Drawing_Start = new Microsoft.Msagl.Drawing.Node("Start");
 			rNode_Drawing_Start.Attr.Shape = Shape.Box;
+			//TODO Nodes from geometry - to set rectangle length and width
+			//TODO Some edges
+
 			graph.AddNode(rNode_Drawing_Start);
+			//TODO Orientationg - horizontal Left to Right
+			graph.LayoutAlgorithmSettings = new SugiyamaLayoutSettings();
 			gViewer.Graph = graph;
 			this.propertyGrid1.SelectedObject = graph;
 		}
