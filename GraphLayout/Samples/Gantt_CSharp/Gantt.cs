@@ -60,11 +60,11 @@ namespace Gantt_CSharp
 			rGraph_Drawing.AddEdge(sAS2, sEnde);
 
 			rNode_Drawing_Start.Attr.Shape = Shape.Box;
-			//TODO Nodes from geometry - to set rectangle length and width
-			//TODO Some edges
+			//TODO 100 Nodes from geometry - to set rectangle length and width ; Sample: DrawingFromGeometryGraphSample
+			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
 
 			rGraph_Drawing.AddNode(rNode_Drawing_Start);
-			//TODO Orientationg - horizontal Left to Right
+			//TODO Orientation - horizontal Left to Right
 			rGraph_Drawing.LayoutAlgorithmSettings = new SugiyamaLayoutSettings();
 			gViewer.Graph = rGraph_Drawing;
 			this.propertyGrid1.SelectedObject = rGraph_Drawing;
