@@ -7,6 +7,9 @@
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
+		private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
+		private System.Windows.Forms.Button ShowObjectsInTheLastRect;
+
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
