@@ -8,7 +8,7 @@
 		private System.ComponentModel.IContainer components = null;
 
 		private Microsoft.Msagl.GraphViewerGdi.GViewer gViewer;
-		private System.Windows.Forms.Button ShowObjectsInTheLastRect;
+
 
 		/// <summary>
 		/// Clean up any resources being used.
@@ -32,6 +32,9 @@
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+			this.gViewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -45,15 +48,60 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(972, 505);
 			this.panel1.TabIndex = 4;			// 
+
+
+			// 
+			// gViewer
+			// 
+			this.gViewer.ArrowheadLength = 10D;
+			this.gViewer.AsyncLayout = false;
+			this.gViewer.AutoScroll = true;
+			this.gViewer.BackwardEnabled = false;
+			this.gViewer.BuildHitTree = true;
+			this.gViewer.CurrentLayoutMethod = Microsoft.Msagl.GraphViewerGdi.LayoutMethod.UseSettingsOfTheGraph;
+			this.gViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gViewer.FileName = "";
+			this.gViewer.ForwardEnabled = false;
+			this.gViewer.Graph = null;
+			this.gViewer.InsertingEdge = false;
+			this.gViewer.LayoutAlgorithmSettingsButtonVisible = true;
+			this.gViewer.LayoutEditingEnabled = true;
+			this.gViewer.Location = new System.Drawing.Point(0, 0);
+			this.gViewer.LooseOffsetForRouting = 0.25D;
+			this.gViewer.MouseHitDistance = 0.05D;
+			this.gViewer.Name = "gViewer";
+			this.gViewer.NavigationVisible = true;
+			this.gViewer.NeedToCalculateLayout = true;
+			this.gViewer.OffsetForRelaxingInRouting = 0.6D;
+			this.gViewer.PaddingForEdgeRouting = 8D;
+			this.gViewer.PanButtonPressed = false;
+			this.gViewer.SaveAsImageEnabled = true;
+			this.gViewer.SaveAsMsaglEnabled = true;
+			this.gViewer.SaveButtonVisible = true;
+			this.gViewer.SaveGraphButtonVisible = true;
+			this.gViewer.SaveInVectorFormatEnabled = true;
+			this.gViewer.Size = new System.Drawing.Size(674, 505);
+			this.gViewer.TabIndex = 3;
+			this.gViewer.TightOffsetForRouting = 0.125D;
+			this.gViewer.ToolBarIsVisible = true;
+			this.gViewer.WindowZoomButtonPressed = false;
+			this.gViewer.ZoomF = 1D;
+			this.gViewer.ZoomFraction = 0.5D;
+			this.gViewer.ZoomWhenMouseWheelScroll = true;
+			this.gViewer.ZoomWindowThreshold = 0.05D;
+			//
 			// CFormGantt
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.ClientSize = new System.Drawing.Size(970, 532);
+
 			this.Controls.Add(this.panel1);
 			this.Name = "CFormGantt";
 			this.Text = "Gantt";
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
