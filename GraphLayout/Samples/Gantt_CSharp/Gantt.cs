@@ -64,8 +64,11 @@ namespace Gantt_CSharp
 			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
 
 			rGraph_Drawing.AddNode(rNode_Drawing_Start);
-			//TODO Orientation - horizontal Left to Right
-			rGraph_Drawing.LayoutAlgorithmSettings = new SugiyamaLayoutSettings();
+			SugiyamaLayoutSettings rSettings = new SugiyamaLayoutSettings();
+			rSettings.Transformation = Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation.Rotation(Math.PI / 2); 
+			rSettings.EdgeRoutingSettings.EdgeRoutingMode = EdgeRoutingMode.Spline;
+			rGraph_Drawing.LayoutAlgorithmSettings = rSettings;
+			
 			gViewer.Graph = rGraph_Drawing;
 			this.propertyGrid1.SelectedObject = rGraph_Drawing;
 		}
