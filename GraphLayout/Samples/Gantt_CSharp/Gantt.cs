@@ -31,14 +31,21 @@ namespace Gantt_CSharp
 		{
 			InitializeComponent();
 			//CreateDrawingGraph();
-			CreateGeometryGraph();
+			CreateAndLayoutGraph();
 		}
 		private void panel1_Paint(object sender, PaintEventArgs e)
 		{
 
 		}
 
-		private static GeometryGraph CreateGeometryGraph()
+		protected override void OnPaint(PaintEventArgs e)
+		{
+			e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			//TODO 100-500 OnPaint calls CreateAndLayoutGraph
+			base.OnPaint(e);
+		}
+
+		private static GeometryGraph CreateAndLayoutGraph()
 		{
 			GeometryGraph graph = new GeometryGraph();
 			//TODO 100 Nodes from geometry - to set rectangle length and width ; Sample: DrawingFromGeometryGraphSample			
