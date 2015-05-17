@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Microsoft.Msagl.Core.Geometry.Curves;
+using Microsoft.Msagl.Core.Layout;
 using Microsoft.Msagl.Core.Routing;
 using Microsoft.Msagl.Drawing;
 using Microsoft.Msagl.GraphViewerGdi;
@@ -29,12 +30,24 @@ namespace Gantt_CSharp
 		public CFormGantt()
 		{
 			InitializeComponent();
-			CreateDrawingGraph();
+			//CreateDrawingGraph();
+			CreateGeometryGraph();
 		}
-
 		private void panel1_Paint(object sender, PaintEventArgs e)
 		{
 
+		}
+
+		private static GeometryGraph CreateGeometryGraph()
+		{
+			GeometryGraph graph = new GeometryGraph();
+			//TODO 100 Nodes from geometry - to set rectangle length and width ; Sample: DrawingFromGeometryGraphSample			
+			//TODO 200 CreateGeometryGraph
+			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
+			//LayeredLayout rLayeredLayout = new LayeredLayout()
+			// Muster DrawingFromGeometryGraphSample CreateAndLayoutGraph
+			// Knoten auch in CreateDrawingGraph() definiert
+			return graph;
 		}
 
 		//TODO GViewerOnMouseMove
@@ -60,18 +73,12 @@ namespace Gantt_CSharp
 			rGraph_Drawing.AddEdge(sAS2, sEnde);
 
 			rNode_Drawing_Start.Attr.Shape = Shape.Box;
-			//TODO 100 Nodes from geometry - to set rectangle length and width ; Sample: DrawingFromGeometryGraphSample
-			//GeometryGraph graph = new GeometryGraph();
-			//TODO 200 CreateGeometryGraph
-
 			rGraph_Drawing.AddNode(rNode_Drawing_Start);
 			SugiyamaLayoutSettings rSettings = new SugiyamaLayoutSettings();
 			rSettings.Transformation = Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation.Rotation(Math.PI / 2); 
 			rSettings.EdgeRoutingSettings.EdgeRoutingMode = EdgeRoutingMode.Spline;
 			rGraph_Drawing.LayoutAlgorithmSettings = rSettings;
-			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
-			//LayeredLayout rLayeredLayout = new LayeredLayout()
-			
+		
 			gViewer.Graph = rGraph_Drawing;
 			this.propertyGrid1.SelectedObject = rGraph_Drawing;
 		}
