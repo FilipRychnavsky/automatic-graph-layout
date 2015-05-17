@@ -29,7 +29,7 @@ namespace Gantt_CSharp
 		public CFormGantt()
 		{
 			InitializeComponent();
-			CreateGraph();
+			CreateDrawingGraph();
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
@@ -38,7 +38,7 @@ namespace Gantt_CSharp
 		}
 
 		//TODO GViewerOnMouseMove
-		void CreateGraph()
+		void CreateDrawingGraph()
 		{
 			Graph rGraph_Drawing = new Graph("graph");
 			//graph.LayoutAlgorithmSettings=new MdsLayoutSettings();
@@ -61,13 +61,16 @@ namespace Gantt_CSharp
 
 			rNode_Drawing_Start.Attr.Shape = Shape.Box;
 			//TODO 100 Nodes from geometry - to set rectangle length and width ; Sample: DrawingFromGeometryGraphSample
-			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
+			//GeometryGraph graph = new GeometryGraph();
+			//TODO 200 CreateGeometryGraph
 
 			rGraph_Drawing.AddNode(rNode_Drawing_Start);
 			SugiyamaLayoutSettings rSettings = new SugiyamaLayoutSettings();
 			rSettings.Transformation = Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation.Rotation(Math.PI / 2); 
 			rSettings.EdgeRoutingSettings.EdgeRoutingMode = EdgeRoutingMode.Spline;
 			rGraph_Drawing.LayoutAlgorithmSettings = rSettings;
+			//TODO 300 Layering ?Start und AS1 sollen unteraneindere anfangen. Der AS2 fängt dort an, wo AS1 Endet				
+			//LayeredLayout rLayeredLayout = new LayeredLayout()
 			
 			gViewer.Graph = rGraph_Drawing;
 			this.propertyGrid1.SelectedObject = rGraph_Drawing;
